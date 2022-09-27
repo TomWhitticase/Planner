@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .important {
+    @apply text-red-500;
+  }
+  .task {
+    @apply bg-white w-[16rem] m-2 cursor-pointer shadow-lg;
+  }
+  .btn {
+    @apply bg-blue-400 text-white cursor-pointer p-2 shadow-lg;
+  }
+  body {
+    @apply bg-blue-400;
+  }
+}
