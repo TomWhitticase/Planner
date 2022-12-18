@@ -3,7 +3,9 @@ import { FaExclamationCircle, FaTimes } from "react-icons/fa";
 const Task = ({ task, onDelete, onToggle }) => {
   return (
     <div
-      className={`task ${task.important ? "important" : ""}`}
+      className={`p-4 rounded-lg shadow-lg ${
+        task.important ? "text-red-500" : ""
+      }`}
       onDoubleClick={() => onToggle(task.id)}
     >
       <div className="flex justify-between">
@@ -16,9 +18,19 @@ const Task = ({ task, onDelete, onToggle }) => {
           onClick={() => onDelete(task.id)}
         />
       </div>
-      <p className="text-slate-400">{task.day}</p>
+      <p className="text-slate-400">{getDisplayDate(task.date)}</p>
     </div>
   );
 };
+
+function getDisplayDate(dateTime) {
+  const date = dateTime.split("T")[0];
+  const time = dateTime.split("T")[1];
+
+  const splitDate = date.split("-");
+  const date2 = splitDate[2] + "/" + splitDate[1] + "/" + splitDate[0];
+
+  return date2 + " " + time;
+}
 
 export default Task;

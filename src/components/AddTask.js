@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
-  const [day, setDay] = useState("");
+  const [date, setDay] = useState("");
   const [important, setImportant] = useState(false);
 
   const onSubmit = (e) => {
@@ -13,7 +13,7 @@ const AddTask = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, important });
+    onAdd({ text, date, important });
 
     setText("");
     setDay("");
@@ -33,12 +33,12 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
       <div className="flex flex-col p-2">
-        <label>Day & Time</label>
+        <label>Date & Time</label>
         <input
           className=""
-          type="text"
-          placeholder="Add Day & Time"
-          value={day}
+          type="datetime-local"
+          placeholder="Add Date & Time"
+          value={date}
           onChange={(e) => setDay(e.target.value)}
         />
       </div>
@@ -53,7 +53,7 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
 
-      <input className="btn m-2" type="submit" value="Add" />
+      <input className="" type="submit" value="Add" />
     </form>
   );
 };

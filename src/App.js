@@ -10,19 +10,19 @@ function App() {
     {
       id: 1,
       text: "Meeting with boss",
-      day: "Sep 26th at 2:30",
+      date: "2022-12-15T15:00",
       important: true,
     },
     {
       id: 2,
       text: "Call parents",
-      day: "Sep 30th at 7:30",
+      date: "2022-11-28T20:0",
       important: true,
     },
     {
       id: 3,
       text: "Opticians Appointment",
-      day: "Oct 5th at 2:30",
+      date: "2022-12-15T10:15",
       important: false,
     },
   ]);
@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <div className="flex flex-col justify-center align-middle bg-gray-100 shadow-lg m-2">
+      <div className="flex flex-col justify-center align-middle bg-gray-100  rounded-lg shadow-lg p-4">
         <Button
           color={showAddTask ? "red" : "green"}
           text={showAddTask ? "Close" : "Add Meeting"}
